@@ -11,11 +11,12 @@ module.exports = {
   theme: "default", // Options: "default", "glass", "dark"
   
   // Social media links (optional)
-  social: {
-    twitter: "https://twitter.com/yourusername",
-    github: "https://github.com/yourusername",
-    // Add more as needed
-  },
+  socialLinks: [
+    // { platform: "twitter", url: "https://twitter.com/yourusername" },
+    // { platform: "github", url: "https://github.com/yourusername" },
+    // { platform: "linkedin", url: "https://linkedin.com/in/yourusername" },
+    { platform: "website", url: "https://zenhabits.net/" }
+  ]
   
   // Any additional configuration options can be added here
 };
