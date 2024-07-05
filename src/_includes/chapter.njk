@@ -2,6 +2,7 @@
 layout: base.njk
 ---
 <article class="container mx-auto px-4 py-8 max-w-3xl">
+    <h1 class="text-4xl font-bold mb-6 font-sans">{{ title }}</h1>
     <div class="{{ themes[site.theme].prose }} max-w-none mb-8">
         {{ content | safe }}
     </div>
