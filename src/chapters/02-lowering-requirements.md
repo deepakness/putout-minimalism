@@ -1,5 +1,5 @@
 ---
-title: "Lowering your life’s requirements"
+title: "Lowering life’s requirements"
 description: "I was walking through an airport and wanted to get a cup of coffee to wake me up."
 customSlug: requirements
 ---

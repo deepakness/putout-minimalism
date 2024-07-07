@@ -10,7 +10,6 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addWatchTarget("./src/styles/tailwind.css");
-    eleventyConfig.addPassthroughCopy({ "./src/styles/tailwind.css": "./styles/tailwind.css" });
 
     eleventyConfig.addCollection("chapters", function(collectionApi) {
       return collectionApi.getFilteredByGlob("src/chapters/*.md").sort((a, b) => {
