@@ -29,7 +29,6 @@ layout: base.njk
         </div>
         <!-- Right side: Chapter cards -->
         <div class="lg:w-2/3">
-            <h2 class="text-3xl font-bold mb-4 font-sans">Chapters</h2>
             <div class="grid gap-6 grid-cols-1 sm:grid-cols-2">
                 {%- for chapter in collections.chapters -%}
                     {% include "chapterCard.njk" %}

@@ -31,32 +31,37 @@
     
     <!-- Stylesheets -->
     <link href="/styles/tailwind.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="{{ fonts }}" rel="stylesheet">
+
+    <!-- Tracking -->
+    {% include "tracking.njk" %}
 </head>
 <body class="{{ themes[site.theme].body }} flex flex-col min-h-screen">
     <!-- Hamburger menu -->
-    <div class="fixed top-0 left-0 h-screen w-64 {{ themes[site.theme].card }} transform -translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto" id="sidebar">
-        <div class="p-4 pt-16 pb-24">
-            <h2 class="text-xl font-bold mb-4">Chapters</h2>
-            <ul>
-                {%- for chapter in collections.chapters -%}
-                <li class="mb-2">
-                    <a href="{{ chapter.url }}" class="hover:underline">{{ chapter.data.title }}</a>
-                </li>
-                {%- endfor -%}
-            </ul>
+    {% if not isHomepage %}
+        <div class="fixed top-0 left-0 h-screen w-64 {{ themes[site.theme].card }} transform -translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto" id="sidebar">
+            <div class="p-4 pt-16 pb-24">
+                <h2 class="text-xl font-bold mb-4 font-sans">Chapters</h2>
+                <ul>
+                    {%- for chapter in collections.chapters -%}
+                    <li class="mb-2">
+                        <a href="{{ chapter.url }}" class="hover:underline">{{ chapter.data.title }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+            </div>
         </div>
-    </div>
     
-    <!-- Overlay for click-outside -->
-    <div class="fixed inset-0 bg-black opacity-50 z-40 hidden" id="overlay"></div>
-    
-    <!-- Hamburger button -->
-    <button class="fixed top-4 left-4 z-50 p-2 rounded-md {{ themes[site.theme].button }}" id="menu-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-    </button>
+        <!-- Overlay for click-outside -->
+        <div class="fixed inset-0 bg-black opacity-50 z-40 hidden" id="overlay"></div>
+        
+        <!-- Hamburger button -->
+        <button class="fixed top-4 left-4 z-50 p-2 rounded-md {{ themes[site.theme].button }}" id="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    {% endif %}
 
     <header class="{{ themes[site.theme].header }} p-4">
         <div class="container mx-auto text-center">
